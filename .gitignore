@@ -39,7 +39,8 @@
 /config/application.yml
 
 
-
+*.github
+bin
 log
 
 
