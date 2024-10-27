@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: <%= ENV["PASSWORD"] %>
+  host: <%= ENV["HOST"] %>
+  port: <%= ENV["PORT"] %>
+
+development:
+  <<: *default
+  database: airbnb_development
+
+test:
+  <<: *default
+  database: airbnb_test
+
+production:
+  <<: *default
+  database: airbnb_production
+  username: airbnb
+  password: <%= ENV["AIRBNB_DATABASE_PASSWORD"] %>
